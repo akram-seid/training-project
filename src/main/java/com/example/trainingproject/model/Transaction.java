@@ -22,7 +22,6 @@ public class Transaction {
     private Type type;
     @NotBlank(message = "Amount must be specified!")
     private Double amount;
-    @JsonIgnore
     @ManyToOne
     @JoinColumn(
             name = "account_id",

@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.math.BigInteger;
 
 @Data
 @Entity
@@ -18,11 +17,10 @@ public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private BigInteger accountNumber;
+    private String accountNumber;
     private AccountType accountType;
+    @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "customer_id",
-            referencedColumnName = "id")
     private Customer customer;
 
 }

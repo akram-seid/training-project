@@ -20,7 +20,7 @@ public class CustomerController {
     @PostMapping("/create")
     public ResponseEntity<?> saveCustomer(@Valid @RequestBody Customer customer){
         customerService.create(customer);
-            return new  ResponseEntity<>("saved Successfully",HttpStatus.CREATED);
+                return new  ResponseEntity<>("saved Successfully",HttpStatus.CREATED);
     }
 
     @GetMapping("/read")
@@ -36,7 +36,7 @@ public class CustomerController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteCustomer(@PathVariable("id") Long id){
         customerService.delete(id);
-        return new ResponseEntity<>("Data Deleted Successfully",HttpStatus.OK);
+        return new ResponseEntity<>("Deleted Successfully",HttpStatus.OK);
     }
 
     @GetMapping("/get/{id}")

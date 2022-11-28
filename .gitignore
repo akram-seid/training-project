@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+/src/main/java/com/example/trainingproject/controller/
+/src/main/java/com/example/trainingproject/exception/
+/src/main/java/com/example/trainingproject/repository/
+/src/main/java/com/example/trainingproject/service/

@@ -11,6 +11,7 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -34,11 +35,7 @@ public class Customer {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
-    @JsonIgnore
-    @OneToMany(
-            mappedBy = "customer",
-            fetch = FetchType.LAZY,
-            cascade =CascadeType.REMOVE)
-    private Set<Account> accounts = new HashSet<>();
+    @OneToMany
+    private List<Account> account;
 
 }
